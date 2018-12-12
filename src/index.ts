@@ -440,6 +440,11 @@ function FlatpickrInstance(
     if (self.daysContainer !== undefined) {
       bind(self.monthNav, "mousedown", onClick(onMonthNavClick));
 
+      bind(self.monthNav, ["keydown"], e => {
+        if (e.keyCode !== 13 && e.keyCode !== 32) return;
+        onMonthNavClick(e);
+      });
+
       bind(self.monthNav, ["keyup", "increment"], onYearInput);
       bind(self.daysContainer, "mousedown", onClick(selectDate));
     }
@@ -968,12 +973,12 @@ function FlatpickrInstance(
     self.monthElements = [];
 
     self.prevMonthNav = createElement<HTMLSpanElement>(
-      "span",
+      "button",
       "flatpickr-prev-month"
     );
     self.prevMonthNav.innerHTML = self.config.prevArrow;
 
-    self.nextMonthNav = createElement("span", "flatpickr-next-month");
+    self.nextMonthNav = createElement("button", "flatpickr-next-month");
     self.nextMonthNav.innerHTML = self.config.nextArrow;
 
     buildMonths();
