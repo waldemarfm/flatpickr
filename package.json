@@ -1,6 +1,6 @@
 {
-  "name": "flatpickr",
-  "version": "4.5.2",
+  "name": "flatpickr-a11y",
+  "version": "1.0.0",
   "description": "A lightweight, powerful javascript datetime picker",
   "scripts": {
     "build": "run-s build:pre build:build build:post",
@@ -59,16 +59,7 @@
   "main": "dist/flatpickr.js",
   "style": "dist/flatpickr.css",
   "types": "./dist/typings.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chmln/flatpickr.git"
-  },
-  "author": "Gregory <gregory.mkv@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chmln/flatpickr/issues"
-  },
-  "homepage": "https://chmln.github.io/flatpickr",
   "keywords": [
     "javascript",
     "datetimepicker",
@@ -88,5 +79,14 @@
       "prettier --trailing-comma es5 --write",
       "git add"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waldemarfm/flatpickr.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/waldemarfm/flatpickr/issues"
+  },
+  "homepage": "https://github.com/waldemarfm/flatpickr#readme"
 }
