@@ -806,18 +806,25 @@ function FlatpickrInstance(
         dayElem.classList.contains("nextMonthDay")
       );
 
-      let elemToFocus = dayElem as DayElement;
-      if (!(dayMatches && dayEnabled && dayInMonth)) {
-        elemToFocus = getFirstAvailableDay(1) as DayElement;
-      }
+      if (dayMatches && dayEnabled && dayInMonth) {
+        if (focus) {
+          focusOnDayElem(dayElem);
+        } else {
+          dayElem.tabIndex = 0;
+        }
 
-      if (focus) {
-        focusOnDayElem(elemToFocus);
-      } else {
-        elemToFocus.tabIndex = 0;
+        return;
       }
 
       i++;
+    }
+
+    const firstDay = getFirstAvailableDay(1) as DayElement;
+
+    if (focus) {
+      focusOnDayElem(firstDay);
+    } else {
+      firstDay.tabIndex = 0;
     }
   }
 
