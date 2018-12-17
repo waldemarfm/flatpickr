@@ -2216,9 +2216,8 @@ function FlatpickrInstance(
   }
 
   function trapFocus(e: KeyboardEvent) {
-    console.log(self);
     const focusable = self.calendarContainer.querySelectorAll(
-      ".flatpickr-prev-month, .flatpickr-next-month, .cur-year, .flatpickr-day[tabindex='0'], .flatpickr-hour, .flatpickr-minute, .flatpickr-am-pm"
+      ".flatpickr-prev-month:not(.disabled), .flatpickr-next-month:not(.disabled), .cur-year, .flatpickr-day[tabindex='0'], .flatpickr-hour, .flatpickr-minute, .flatpickr-am-pm"
     );
 
     const first = focusable[0] as HTMLElement;
