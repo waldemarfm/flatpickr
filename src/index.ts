@@ -456,6 +456,7 @@ function FlatpickrInstance(
     bind(self._input, "keydown", e => {
       if (e.keyCode !== 40) return;
       e.preventDefault();
+      e.stopPropagation();
       self.open(e);
     });
 
